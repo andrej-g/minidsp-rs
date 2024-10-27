@@ -2,7 +2,7 @@
 
 rustPlatform.buildRustPackage {
   pname = "minidsp";
-  version = "0.1.11";
+  version = "0.1.12";
   src = ./.;
 
   cargoBuildFlags = [ "-p minidsp -p minidsp-daemon" ];
