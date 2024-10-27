@@ -1429,6 +1429,10 @@ pub const DEVICE: Device = Device {
                     enable: BM_MIXER_1_7_STATUS,
                     gain: Some(BM_MIXER_1_7),
                 },
+                Gate {
+                    enable: BM_MIXER_1_8_STATUS,
+                    gain: Some(BM_MIXER_1_8),
+                },
             ],
             peq: &[],
         },
@@ -1466,6 +1470,10 @@ pub const DEVICE: Device = Device {
                 Gate {
                     enable: BM_MIXER_2_7_STATUS,
                     gain: Some(BM_MIXER_2_7),
+                },
+                Gate {
+                    enable: BM_MIXER_2_8_STATUS,
+                    gain: Some(BM_MIXER_2_8),
                 },
             ],
             peq: &[],
@@ -1505,6 +1513,10 @@ pub const DEVICE: Device = Device {
                     enable: BM_MIXER_3_7_STATUS,
                     gain: Some(BM_MIXER_3_7),
                 },
+                Gate {
+                    enable: BM_MIXER_3_8_STATUS,
+                    gain: Some(BM_MIXER_3_8),
+                },
             ],
             peq: &[],
         },
@@ -1542,6 +1554,10 @@ pub const DEVICE: Device = Device {
                 Gate {
                     enable: BM_MIXER_4_7_STATUS,
                     gain: Some(BM_MIXER_4_7),
+                },
+                Gate {
+                    enable: BM_MIXER_4_8_STATUS,
+                    gain: Some(BM_MIXER_4_8),
                 },
             ],
             peq: &[],
@@ -1581,6 +1597,10 @@ pub const DEVICE: Device = Device {
                     enable: BM_MIXER_5_7_STATUS,
                     gain: Some(BM_MIXER_5_7),
                 },
+                Gate {
+                    enable: BM_MIXER_5_8_STATUS,
+                    gain: Some(BM_MIXER_5_8),
+                },
             ],
             peq: &[],
         },
@@ -1619,6 +1639,10 @@ pub const DEVICE: Device = Device {
                     enable: BM_MIXER_6_7_STATUS,
                     gain: Some(BM_MIXER_6_7),
                 },
+                Gate {
+                    enable: BM_MIXER_6_8_STATUS,
+                    gain: Some(BM_MIXER_6_8),
+                },
             ],
             peq: &[],
         },
@@ -1656,6 +1680,52 @@ pub const DEVICE: Device = Device {
                 Gate {
                     enable: BM_MIXER_7_7_STATUS,
                     gain: Some(BM_MIXER_7_7),
+                },
+                Gate {
+                    enable: BM_MIXER_7_8_STATUS,
+                    gain: Some(BM_MIXER_7_8),
+                },
+            ],
+            peq: &[],
+        },
+        Input {
+            gate: Some(Gate {
+                enable: BM_D_GAIN_8_STATUS,
+                gain: Some(BM_D_GAIN_8),
+            }),
+            meter: Some(METER_IN_8),
+            routing: &[
+                Gate {
+                    enable: BM_MIXER_8_1_STATUS,
+                    gain: Some(BM_MIXER_8_1),
+                },
+                Gate {
+                    enable: BM_MIXER_8_2_STATUS,
+                    gain: Some(BM_MIXER_8_2),
+                },
+                Gate {
+                    enable: BM_MIXER_8_3_STATUS,
+                    gain: Some(BM_MIXER_8_3),
+                },
+                Gate {
+                    enable: BM_MIXER_8_4_STATUS,
+                    gain: Some(BM_MIXER_8_4),
+                },
+                Gate {
+                    enable: BM_MIXER_8_5_STATUS,
+                    gain: Some(BM_MIXER_8_5),
+                },
+                Gate {
+                    enable: BM_MIXER_8_6_STATUS,
+                    gain: Some(BM_MIXER_8_6),
+                },
+                Gate {
+                    enable: BM_MIXER_8_7_STATUS,
+                    gain: Some(BM_MIXER_8_7),
+                },
+                Gate {
+                    enable: BM_MIXER_8_8_STATUS,
+                    gain: Some(BM_MIXER_8_8),
                 },
             ],
             peq: &[],
@@ -1834,6 +1904,31 @@ pub const DEVICE: Device = Device {
                 attack: COMP_7_0_ATIME,
                 release: COMP_7_0_RTIME,
                 meter: Some(METER_COMP_7),
+            }),
+            fir: None,
+        },
+        Output {
+            gate: Gate {
+                enable: D_GAIN_8_0_STATUS,
+                gain: Some(D_GAIN_8_0),
+            },
+            meter: Some(METER_OUT_8),
+            delay_addr: Some(DELAY_8_0),
+            invert_addr: POLARITY_OUT_8_0,
+            peq: &[
+                PEQ_8_10, PEQ_8_9, PEQ_8_8, PEQ_8_7, PEQ_8_6, PEQ_8_5, PEQ_8_4, PEQ_8_3, PEQ_8_2,
+                PEQ_8_1,
+            ],
+            xover: Some(Crossover {
+                peqs: &[BPF_8_1, BPF_8_5, BM_BPF_8_1, BM_BPF_8_5],
+            }),
+            compressor: Some(Compressor {
+                bypass: COMP_8_0_STATUS,
+                threshold: COMP_8_0_THRESHOLD,
+                ratio: COMP_8_0_RATIO,
+                attack: COMP_8_0_ATIME,
+                release: COMP_8_0_RTIME,
+                meter: Some(METER_COMP_8),
             }),
             fir: None,
         },
